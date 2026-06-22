@@ -1,0 +1,52 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Main background */
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #0b0f14; /* deep clean base */
+  overflow-x: hidden;
+}
+
+/* Soft glowing blobs (modern SaaS style) */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(140px);
+  z-index: -1;
+}
+
+body::before {
+  background: rgba(6, 182, 212, 0.18); /* cyan glow */
+  top: -150px;
+  left: -120px;
+}
+
+body::after {
+  background: rgba(255, 140, 0, 0.12); /* warm accent */
+  bottom: -180px;
+  right: -150px;
+}
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(6,182,212,0.3);
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(6,182,212,0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(6,182,212,0.3);
+  }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
