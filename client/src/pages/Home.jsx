@@ -31,23 +31,7 @@ export default function Home() {
       console.log(err);
     }
   };
-  const handleDelete = async (id) => {
-    try {
-      await fetch(`http://localhost:5000/api/experiences/${id}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userId: user.id,
-        }),
-      });
-
-      fetchData();
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  
 
   const [form, setForm] = useState({
     company: "",
@@ -546,14 +530,7 @@ const styles = {
     padding: "4px 0",
     opacity: 0.8,
   },
-  deleteBtn: {
-    marginTop: "10px",
-    background: "#ef4444",
-    color: "white",
-    border: "none",
-    padding: "6px 10px",
-    borderRadius: "8px",
-    cursor: "pointer",
+ 
   },
   cancelBtn: {
     flex: 1,
