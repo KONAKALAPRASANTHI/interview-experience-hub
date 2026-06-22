@@ -31,8 +31,7 @@ export default function Home() {
       console.log(err);
     }
   };
-  
-
+   
   const [form, setForm] = useState({
     company: "",
     role: "",
@@ -199,14 +198,8 @@ export default function Home() {
 
             <div style={styles.meta}>❓ {item.questions}</div>
             <div style={styles.meta}>💡 {item.tips}</div>
-            {item.userId === user?.id && (
-              <button
-                onClick={() => handleDelete(item._id)}
-                style={styles.deleteBtn}
-              >
-                🗑️ Delete
-              </button>
-            )}
+             
+ 
  
  
  
@@ -531,7 +524,6 @@ const styles = {
     opacity: 0.8,
   },
  
-  },
   cancelBtn: {
     flex: 1,
     padding: "10px",
